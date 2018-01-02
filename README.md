@@ -41,4 +41,7 @@ further details.
 
 [LICENSE]: <https://github.com/Permafrost/TundraSAP.java/blob/master/LICENSE>
 [Tundra]: <https://github.com/Permafrost/Tundra>
+[TundraSAP.java]: <https://github.com/Permafrost/TundraSAP>
 [TundraTN]: <https://github.com/Permafrost/TundraTN>
+[webMethods Integration Server]: <http://www.softwareag.com/corporate/products/wm/integration/products/ai/overview/default.asp>
+[webMethods Trading Networks]: <http://www.softwareag.com/corporate/products/wm/integration/products/b2b/overview/default.asp>
