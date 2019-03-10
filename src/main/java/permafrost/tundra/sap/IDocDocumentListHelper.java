@@ -104,7 +104,7 @@ public class IDocDocumentListHelper {
             output.add(documentList);
         }
 
-        return output.toArray(new IDocDocumentList[output.size()]);
+        return output.toArray(new IDocDocumentList[0]);
     }
 
     /**
