@@ -3,6 +3,9 @@
 A collection of convenience methods for working with the webMethods
 SAP Adapter.
 
+Please peruse the [API Documentation] for details on the classes and
+methods provided by [TundraSAP.java].
+
 ## Related
 
 See [Tundra] and [TundraTN], packages of cool services for
@@ -39,6 +42,7 @@ be cherry-picked around.
 Copyright &copy; 2017 Lachlan Dowding. See the [LICENSE] file for
 further details.
 
+[API Documentation]: <http://permafrost.github.io/TundraSAP.java/>
 [LICENSE]: <https://github.com/Permafrost/TundraSAP.java/blob/master/LICENSE>
 [Tundra]: <https://github.com/Permafrost/Tundra>
 [TundraSAP.java]: <https://github.com/Permafrost/TundraSAP>
