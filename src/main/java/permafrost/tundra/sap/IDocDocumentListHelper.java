@@ -24,11 +24,9 @@
 
 package permafrost.tundra.sap;
 
-import com.sap.conn.idoc.IDocConversionException;
 import com.sap.conn.idoc.IDocDocumentIterator;
 import com.sap.conn.idoc.IDocDocumentList;
-import com.sap.conn.idoc.IDocIllegalTypeException;
-import com.sap.conn.idoc.IDocSyntaxException;
+import com.sap.conn.idoc.IDocElementException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -48,10 +46,9 @@ public class IDocDocumentListHelper {
      *
      * @param list                      The list whose items are to be processed.
      * @return                          The given list with each item assigned a DOCNUM equal to its list index.
-     * @throws IDocConversionException  If an error occurs.
-     * @throws IDocSyntaxException      If an error occurs.
+     * @throws IDocElementException     If an error occurs.
      */
-    public static IDocDocumentList identify(IDocDocumentList list) throws IDocConversionException, IDocSyntaxException {
+    public static IDocDocumentList identify(IDocDocumentList list) throws IDocElementException {
         if (list != null) {
             int index = 0;
             IDocDocumentIterator iterator = list.iterator();
@@ -71,11 +68,9 @@ public class IDocDocumentListHelper {
      * @param limit                     The maximum length of each IDocDocumentList in the returned IDocDocumentList[].
      * @return                          An IDocDocumentList[] containing the items from the given IDocDocumentList,
      *                                  partitioned by the given limit.
-     * @throws IDocConversionException  If an error occurs.
-     * @throws IDocSyntaxException      If an error occurs.
-     * @throws IDocIllegalTypeException If an error occurs.
+     * @throws IDocElementException     If an error occurs.
      */
-    public static IDocDocumentList[] partition(IDocDocumentList list, int limit) throws IDocConversionException, IDocSyntaxException, IDocIllegalTypeException {
+    public static IDocDocumentList[] partition(IDocDocumentList list, int limit) throws IDocElementException {
         if (list == null) return null;
         if (list.size() == 0) return new IDocDocumentList[0];
         if (limit <= 0) return new IDocDocumentList[] { list };
@@ -95,7 +90,7 @@ public class IDocDocumentListHelper {
             if (index >= limit) {
                 output.add(documentList);
                 documentList = construct(list);
-                documentList.ensureCapacity(remaining < limit ? remaining : limit);
+                documentList.ensureCapacity(Math.min(remaining, limit));
                 index = 0;
             }
         }
