@@ -42,9 +42,6 @@ dependencies {
     testImplementation("org.hamcrest:hamcrest-all:1.3")
 }
 
-tasks {
-    task("deps", Copy::class) {
-        from(configurations.default)
-        into("$buildDir/deps")
-    }
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
 }
