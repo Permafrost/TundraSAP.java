@@ -3,9 +3,6 @@
 A collection of convenience methods for working with the webMethods
 SAP Adapter.
 
-Please peruse the [API Documentation] for details on the classes and
-methods provided by [TundraSAP.java].
-
 ## Related
 
 See [Tundra] and [TundraTN], packages of cool services for
